@@ -1,43 +1,117 @@
 .container {
-    text-align: center;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  border: 2px solid black;
+}
+
+.cell {
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  font-size: 60px;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.cell:hover {
+  background-color: #eee;
+}
+
+.message {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+}
+
+.restart-button {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.restart-button:hover {
+  background-color: #3e8e41;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 800px;
   }
-  
+
   .board {
-    display: flex;
-    flex-wrap: wrap;
-    width: 300px;
-    margin: 0 auto;
+    width: 600px;
+    height: 600px;
   }
-  
+
   .cell {
-    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    font-size: 120px;
+    line-height: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 600px) {
+  .container {
+    width: 600px;
+  }
+
+  .board {
+    width: 400px;
+    height: 400px;
+  }
+
+  .cell {
+    width: 133px;
+    height: 133px;
+    font-size: 80px;
+    line-height: 133px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+
+  .board {
+    width: 300px;
+    height: 300px;
+    margin: 10px auto;
+  }
+
+  .cell {
     width: 100px;
     height: 100px;
-    border: 1px solid black;
-    font-size: 60px;
-    text-align: center;
-    line-height: 100px;
-    cursor: pointer;
+    font-size: 54px;
+    line-height: 90px;
   }
-  
-  .cell:hover {
-    background-color: lightgray;
-  }
-  
-  .cell.x {
-    color: blue;
-  }
-  
-  .cell.o {
-    color: red;
-  }
-  
-  #message {
-    font-size: 30px;
-  }
-  
-  #restart {
+
+  .message {
     font-size: 20px;
-    margin-top: 20px;
   }
-  
+
+  .restart-button {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
